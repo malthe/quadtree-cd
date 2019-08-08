@@ -1,0 +1,40 @@
+[package]
+name = "quadtree-cd"
+version = "0.1.0"
+authors = ["Malthe Borch <mborch@gmail.com>"]
+edition = "2018"
+description = "A quadtree-based data structure for placing shapes such as rotated rectangles in bounded 2D space, checking for collision with already placed items."
+
+publish = true
+
+documentation = "https://docs.rs/quadtree-cd/"
+homepage = "https://github.com/malthe/quadtree-cd"
+repository = "https://github.com/malthe/quadtree-cd"
+
+readme = "README.md"
+
+keywords = ["quadtree", "spatial", "algorithms", "tree"]
+
+# Matching categories within https://crates.io/category_slugs
+categories = ["algorithms", "graphics", "visualization"]
+
+# SPDX 2.1 license expression. See https://spdx.org/licenses/
+license = "Apache-2.0"
+
+# One of: `actively-developed`, `passively-maintained`, `as-is`, `experimental`,
+# `looking-for-maintainer`, `deprecated`, `none`.
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+lazy_static = "1.3"
+
+# Run cargo tests and cargo-clippy as a precommit-hook, per the example in
+# https://github.com/rhysd/cargo-husky#customize-behavior.
+[dev-dependencies]
+rand = "0.6.5"
+
+[dev-dependencies.cargo-husky]
+version = "1"
+default-features = false # Disable features which are enabled by default
+features = ["precommit-hook", "run-cargo-test", "run-cargo-clippy", "run-cargo-fmt"]
+
